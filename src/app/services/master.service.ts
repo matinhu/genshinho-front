@@ -8,22 +8,29 @@ export class MasterService {
   constructor(private modal: NzModalService) {}
 
   createComponentModal(comp, view, params_) {
-    const params = params_
-    params_ = {params};
+    const params = params_;
+    params_ = { params };
     const body: any = {
-      height: params_.height
-        ? isNaN(params_.height)
-          ? params_.height
-          : params_.height + 'px'
+      height: params.height
+        ? isNaN(params.height)
+          ? params.height
+          : params.height + 'px'
+        : '',
+      width: params.width
+        ? isNaN(params.width)
+          ? params.width
+          : params.width + 'px'
         : '',
     };
 
     return new Promise<any>((resolve) => {
       const modal = this.modal.create({
-        nzTitle: null,
+      nzTitle: null,
         nzWidth: params_.width ? params_.width : 520,
         nzClosable: false,
-        nzBodyStyle: body,
+        nzBodyStyle: params.body,
+        // nzClassName: params.class ? params.class : false,
+        // nzWrapClassName: params.class ? params.class : false,
         nzContent: comp,
         nzViewContainerRef: view,
         nzComponentParams: params_,
@@ -41,7 +48,6 @@ export class MasterService {
       modal.afterOpen.subscribe(() => console.log('[afterOpen] emitted!'));
       // Return a result when closed
       modal.afterClose.subscribe((result) => resolve(result));
-
     });
   }
 }

@@ -1,0 +1,47 @@
+.login-form {
+  width: 300px;
+}
+
+.login-form-margin {
+  margin-bottom: 16px;
+}
+
+.login-form-forgot {
+  float: right;
+}
+
+.login-form-button {
+  width: 100%;
+}
+
+.btn-round {
+  cursor: pointer;
+  opacity: 0.75;
+}
+.btn-round:hover {
+  opacity: 0.9;
+}
+.btn-round:active {
+  opacity: 1;
+}
+.register-are {
+  margin-bottom: 8px;
+}
+
+.grad-text {
+  font-weight: bold;
+  background: linear-gradient(90deg, rgb(255 71 71) 0%, rgb(255 255 255) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.title-grad-text {
+  background: linear-gradient(90deg, rgb(218 120 120) 0%, rgb(255 0 0) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.title-grad-text-up {
+  background: linear-gradient(90deg, #000000 0%, #00776c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

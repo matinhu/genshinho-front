@@ -1,1 +1,179 @@
-<p>login works!</p>
+<div class="vgroup ac h100" *ngIf="login">
+  <!-- <img class="mb img128" src="assets/imgs/paimon.png" /> -->
+  <label class="big-text title-grad-text mb">Sign In</label>
+
+  <form
+    nz-form
+    [formGroup]="validateForm"
+    class="login-form mt"
+    (ngSubmit)="submitForm()"
+  >
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input your username!">
+        <nz-input-group nzPrefixIcon="user">
+          <input
+            nzSize="small"
+            type="text"
+            nz-input
+            formControlName="userName"
+            placeholder="Username"
+          />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input your Password!">
+        <nz-input-group nzPrefixIcon="lock">
+          <input
+            nzSize="small"
+            type="password"
+            nz-input
+            formControlName="password"
+            placeholder="Password"
+          />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <div nz-row class="login-form-margin">
+      <div nz-col [nzSpan]="12">
+        <label nz-checkbox formControlName="remember">
+          <span>Remember me</span>
+        </label>
+      </div>
+      <div nz-col [nzSpan]="12">
+        <a class="login-form-forgot">Forgot password</a>
+      </div>
+    </div>
+    <button
+      nz-button
+      nzShape="round"
+      class="login-form-button login-form-margin"
+      [nzType]="'primary'"
+    >
+      Log in
+    </button>
+
+    <div class="vgroup center">
+      <label> - OR - </label>
+      <label class="small-text"> Sign In with </label>
+
+      <div class="hgroup mt">
+        <span class="btn-round mr">
+          <img src="assets/imgs/facebook.png" />
+        </span>
+        <span class="btn-round">
+          <img src="assets/imgs/google.png" />
+        </span>
+      </div>
+    </div>
+  </form>
+
+  <div style="margin-top: 220px; color: white; font-weight: bold">
+    <span class="grad-text"> Don't have an Account ? </span>
+    <a (click)="clickSignUp()"> Sign up </a>
+  </div>
+</div>
+<div class="vgroup ac h100" *ngIf="signUp">
+    <label class="big-text title-grad-text-up mb">Register</label>
+
+  <form
+    nz-form
+    [formGroup]="validateForm"
+    (ngSubmit)="submitForm()"
+    style="width: 300px;"
+  >
+    <nz-form-item>
+      <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Login being used!">
+        <nz-input-group nzPrefixIcon="user">
+          <input
+            nzSize="small"
+            nz-input
+            formControlName="login"
+            id="login"
+            placeholder="Username"
+          />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control
+        [nzSm]="14"
+        [nzXs]="24"
+        nzErrorTip="Please input your password!"
+      >
+        <nz-input-group nzPrefixIcon="lock">
+          <input
+            nzSize="small"
+            nz-input
+            type="password"
+            id="password"
+            formControlName="password"
+            (ngModelChange)="updateConfirmValidator()"
+            placeholder="Password"
+          />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control [nzSm]="14" [nzXs]="24" [nzErrorTip]="errorTpl">
+        <nz-input-group nzPrefixIcon="lock">
+          <input
+            nzSize="small"
+            nz-input
+            type="password"
+            formControlName="checkPassword"
+            id="checkPassword"
+            placeholder="Confirm your password"
+          />
+        </nz-input-group>
+        <ng-template #errorTpl let-control>
+          <ng-container *ngIf="control.hasError('required')">
+            Please confirm your password!
+          </ng-container>
+          <ng-container *ngIf="control.hasError('confirm')">
+            Two passwords that you enter is inconsistent!
+          </ng-container>
+        </ng-template>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control
+        [nzSm]="14"
+        [nzXs]="24"
+        nzErrorTip="The input is not valid E-mail!"
+      >
+        <nz-input-group nzPrefixIcon="mail">
+          <input
+            nzSize="small"
+            nz-input
+            formControlName="email"
+            id="email"
+            placeholder="Email"
+          />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item nz-row class="register-area">
+      <nz-form-control [nzSpan]="14" [nzOffset]="10">
+        <label nz-checkbox formControlName="agree">
+          <span>
+            I have read the
+            <a style="color: rgb(255, 0, 102); font-weight: bold;">agreement</a>
+          </span>
+        </label>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item nz-row class="register-area">
+      <nz-form-control [nzSpan]="14" [nzOffset]="10">
+        <button nz-button nzType="primary">Register</button>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+
+  <div style="margin-top: 160px; color: white; font-weight: bold">
+    <span class="grad-text"> Already have an Account ? </span>
+    <a (click)="clickSignUp()"> Back to Login </a>
+  </div>
+
+</div>

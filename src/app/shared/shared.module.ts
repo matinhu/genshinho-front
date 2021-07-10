@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzUploadModule } from 'ng-zorro-antd/upload';
@@ -11,6 +11,10 @@ import { NzStepsModule } from 'ng-zorro-antd/steps';
 import { NzPopoverModule } from 'ng-zorro-antd/popover';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { LoginComponent } from '../pages/login/login.component';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 
 
 @NgModule({
@@ -29,6 +33,11 @@ import { LoginComponent } from '../pages/login/login.component';
     NzStepsModule,
     NzPopoverModule,
     NzModalModule,
+    NzFormModule,
+    NzInputModule,
+    ReactiveFormsModule,
+    NzButtonModule,
+    NzCheckboxModule,
   ],
   exports: [
     CommonModule,
@@ -42,6 +51,11 @@ import { LoginComponent } from '../pages/login/login.component';
     NzStepsModule,
     NzPopoverModule,
     NzModalModule,
+    NzFormModule,
+    NzInputModule,
+    ReactiveFormsModule,
+    NzButtonModule,
+    NzCheckboxModule,
   ],
 })
 export class SharedModule {}

@@ -1,23 +1,27 @@
 <nz-layout class="app-layout">
-  <nz-sider class="menu-sidebar"
-            nzCollapsible
-            nzWidth="256px"
-            nzBreakpoint="md"
-            [(nzCollapsed)]="isCollapsed"
-            [nzTrigger]="null">
-    <div class="sidebar-logo">
-      <img src="assets/imgs\paimon.png" alt="logo">
-      
-        <h1>Genshinho!</h1>
-        <em (click)="login()"
-        nz-popover nzPopoverContent="Login"
-        nzPopoverPlacemen="bottom"
-        nz-icon nzType="login" nzTheme="outline" class="loginho"></em>
-      
+  <nz-sider
+    class="menu-sidebar"
+    nzCollapsible
+    nzWidth="256px"
+    nzBreakpoint="md"
+    [(nzCollapsed)]="isCollapsed"
+    [nzTrigger]="null"
+  >
+    <div class="sidebar-logo" (click)="login()">
+      <img src="assets/imgs/paimon.png" alt="logo" />
+
+      <h1>Genshinho!</h1>
     </div>
-    <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+    <ul
+      nz-menu
+      nzTheme="dark"
+      nzMode="inline"
+      [nzInlineCollapsed]="isCollapsed"
+    >
       <li nz-menu-item nzMatchRouter>
-        <a routerLink="/home">Home</a>
+        <a routerLink="/home">
+          <em nz-icon nzType="home" nzTheme="outline"></em>
+        </a>
       </li>
       <li nz-submenu nzOpen nzTitle="Tools" nzIcon="tool">
         <ul>
@@ -37,15 +41,27 @@
         </ul>
       </li>
     </ul>
+    <div class="f1"></div>
+    <em
+      (click)="logout()"
+      nz-popover
+      nzPopoverContent="Login"
+      nzPopoverPlacemen="bottom"
+      nz-icon
+      nzType="login"
+      nzTheme="outline"
+      class="loginho"
+    ></em>
   </nz-sider>
   <nz-layout>
     <nz-header>
       <div class="app-header">
         <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
-            <i class="trigger"
-               nz-icon
-               [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
-            ></i>
+          <i
+            class="trigger"
+            nz-icon
+            [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+          ></i>
         </span>
       </div>
     </nz-header>
