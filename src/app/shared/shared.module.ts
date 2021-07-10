@@ -10,10 +10,14 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { NzProgressModule } from 'ng-zorro-antd/progress';
 import { NzStepsModule } from 'ng-zorro-antd/steps';
 import { NzPopoverModule } from 'ng-zorro-antd/popover';
+import { NzModalModule } from 'ng-zorro-antd/modal';
+import { LoginComponent } from '../pages/login/login.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    LoginComponent
+  ],
   imports: [
     CommonModule,
     FormsModule,
@@ -26,6 +30,7 @@ import { NzPopoverModule } from 'ng-zorro-antd/popover';
     NzProgressModule,
     NzStepsModule,
     NzPopoverModule,
+    NzModalModule,
   ],
   exports: [
     CommonModule,
@@ -39,6 +44,7 @@ import { NzPopoverModule } from 'ng-zorro-antd/popover';
     NzProgressModule,
     NzStepsModule,
     NzPopoverModule,
+    NzModalModule,
   ],
 })
 export class SharedModule {}
