@@ -16,7 +16,7 @@ export class AppComponent {
       password: '',
       class: 'login',
       body: {
-        backgroundImage: 'url("assets/imgs/dilucwpp.jpeg")',
+        backgroundImage: 'url("assets/imgs/dilucwpp.jpg")',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
       },
