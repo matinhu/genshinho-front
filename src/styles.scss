@@ -1,0 +1,84 @@
+@import "~ng-zorro-antd/ng-zorro-antd.css";
+/*@import "~ng-zorro-antd/ng-zorro-antd.dark.css";*/
+/*@import "~ng-zorro-antd/ng-zorro-antd.compact.css";*/
+/*@import "~ng-zorro-antd/ng-zorro-antd.aliyun.css";*/
+
+.hgroup {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .fixed{
+    position: sticky;
+    top:0;
+    z-index: 999;
+  }
+  
+  .flex {
+    display: flex;
+  }
+  
+  .vgroup {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .w100 {
+    width: 100%;
+  }
+  .w200 {
+    width: 150%;
+  }
+  
+  .h100 {
+    height: 100%;
+  }
+  
+  .p0 {
+    padding: 0;
+  }
+  
+  .p {
+    padding: 5px;
+  }
+  
+  .f1 {
+    flex: 1;
+  }
+  
+  .f03 {
+    flex: 0.3;
+  }
+  
+  .f2 {
+    flex: 2;
+  }
+  
+  .f3 {
+    flex: 3;
+  }
+  
+  .m {
+    margin: 5px;
+  }
+  
+  .mr {
+    margin-right: 5px;
+  }
+  
+  .ml {
+    margin-left: 5px;
+  }
+  
+  .mt {
+    margin-top: 5px;
+  }
+  
+  .mb {
+    margin-bottom: 5px;
+  }
+  
+  i {
+    margin: 2px;
+  }/* You can add global styles to this file, and also import other style files */
